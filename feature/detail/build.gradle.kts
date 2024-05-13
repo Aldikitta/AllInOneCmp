@@ -19,17 +19,15 @@ kotlin {
         iosSimulatorArm64()
     ).forEach {
         it.binaries.framework {
-            baseName = "home"
+            baseName = "detail"
             isStatic = true
         }
     }
 
     sourceSets {
-        androidMain.dependencies {
-            implementation(libs.compose.ui.tooling.preview)
-            implementation(libs.androidx.activity.compose)
-        }
         commonMain.dependencies {
+            //put your multiplatform dependencies here
+
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material)
@@ -46,7 +44,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.aldikitta.feature.home"
+    namespace = "com.aldikitta.feature.detail"
     compileSdk = 34
     defaultConfig {
         minSdk = 24
