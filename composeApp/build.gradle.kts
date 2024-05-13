@@ -31,6 +31,8 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
+            implementation(libs.koin.android)
+            implementation(libs.koin.androidx.compose)
         }
         commonMain.dependencies {
             implementation(project(":feature:home"))
@@ -45,7 +47,7 @@ kotlin {
             implementation(libs.navigation.compose)
 
             // Koin
-            implementation(libs.koin.core)
+            api(libs.koin.core)
             implementation(libs.koin.compose)
         }
     }

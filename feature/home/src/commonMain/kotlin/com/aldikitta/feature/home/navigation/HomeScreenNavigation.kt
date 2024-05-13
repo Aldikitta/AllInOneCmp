@@ -12,12 +12,13 @@ fun NavController.navigateHomeScreen(navOptions: NavOptions? = null) {
 }
 
 fun NavGraphBuilder.homeScreen(
-    navigateToB: () -> Unit
+    navigateToB: () -> Unit,
+    dummyText: String,
 ) {
     composable(
         route = HOME_SCREEN,
         content = {
-            HomeScreen(navigateToB)
+            HomeScreen(navigateToB, dummyText)
         },
     )
 }

@@ -11,11 +11,13 @@ fun NavController.navigateDetailScreen(navOptions: NavOptions? = null) {
     this.navigate(DETAIL_SCREEN, navOptions)
 }
 
-fun NavGraphBuilder.detailScreen() {
+fun NavGraphBuilder.detailScreen(
+    dummyText: String
+) {
     composable(
         route = DETAIL_SCREEN,
         content = {
-            DetailScreen()
+            DetailScreen(dummyText)
         },
     )
 }
