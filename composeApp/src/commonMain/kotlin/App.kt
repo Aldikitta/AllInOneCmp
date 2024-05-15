@@ -11,6 +11,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
@@ -24,29 +26,43 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 import moviekmp.composeapp.generated.resources.Res
 import moviekmp.composeapp.generated.resources.compose_multiplatform
+import org.koin.compose.KoinContext
+import org.koin.compose.currentKoinScope
 
 const val initial = "initial"
 
-@OptIn(ExperimentalResourceApi::class)
 @Composable
 @Preview
 fun App() {
     MaterialTheme {
-        val navController: NavHostController = rememberNavController()
+        KoinContext {
+            val navController: NavHostController = rememberNavController()
+            val viewModel = koinViewModel<MainViewModel>()
+            NavHost(
+                navController = navController,
+                route = initial,
+                startDestination = HOME_SCREEN,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .verticalScroll(rememberScrollState())
+            ) {
+                homeScreen(
+                    navigateToB = {
+                        navController.navigateDetailScreen()
+                    },
+                    dummyText = viewModel.getDummyText()
+                )
 
-        NavHost(
-            navController = navController,
-            route = initial,
-            startDestination = HOME_SCREEN,
-            modifier = Modifier
-                .fillMaxSize()
-                .verticalScroll(rememberScrollState())
-        ) {
-            homeScreen {
-                navController.navigateDetailScreen()
+                detailScreen(dummyText = viewModel.getDummyText())
             }
-
-            detailScreen()
         }
+    }
+}
+
+@Composable
+inline fun <reified T: ViewModel> koinViewModel(): T {
+    val scope = currentKoinScope()
+    return viewModel {
+        scope.get<T>()
     }
 }

@@ -11,14 +11,15 @@ import androidx.compose.ui.Modifier
 
 @Composable
 fun HomeScreen(
-    navigateToB: () -> Unit
+    navigateToB: () -> Unit,
+    dummyText: String
 ) {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text("THIS IS SCREEN A")
+        Text(dummyText)
         Button(onClick = {
             navigateToB.invoke()
         }) {
