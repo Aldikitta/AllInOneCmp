@@ -29,7 +29,7 @@ dependencyResolutionManagement {
 }
 
 include(":composeApp")
-include(":feature:home")
+include(":feature:movie-home")
 include(":feature:detail")
 include(":core:data")
 include(":core:domain")
