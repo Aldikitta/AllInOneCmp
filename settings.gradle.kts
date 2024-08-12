@@ -30,7 +30,7 @@ dependencyResolutionManagement {
 
 include(":composeApp")
 include(":feature:movie-home")
-include(":feature:detail")
+include(":feature:movie-detail")
 include(":core:data")
 include(":core:domain")
 include(":core:model")

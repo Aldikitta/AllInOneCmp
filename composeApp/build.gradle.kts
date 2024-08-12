@@ -41,7 +41,7 @@ kotlin {
         }
         commonMain.dependencies {
             implementation(project(":feature:movie-home"))
-            implementation(project(":feature:detail"))
+            implementation(project(":feature:movie-detail"))
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material)
