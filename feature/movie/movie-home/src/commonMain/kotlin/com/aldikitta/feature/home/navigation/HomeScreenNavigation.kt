@@ -4,11 +4,11 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
+import com.aldikitta.base.routes.Routes.MOVIE_HOME_SCREEN
 import com.aldikitta.feature.home.HomeScreen
 
-const val HOME_SCREEN = "home_screen_routes"
 fun NavController.navigateHomeScreen(navOptions: NavOptions? = null) {
-    this.navigate(HOME_SCREEN, navOptions)
+    this.navigate(MOVIE_HOME_SCREEN, navOptions)
 }
 
 fun NavGraphBuilder.homeScreen(
@@ -16,7 +16,7 @@ fun NavGraphBuilder.homeScreen(
     dummyText: String,
 ) {
     composable(
-        route = HOME_SCREEN,
+        route = MOVIE_HOME_SCREEN,
         content = {
             HomeScreen(navigateToB, dummyText)
         },

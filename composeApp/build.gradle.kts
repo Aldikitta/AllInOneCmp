@@ -40,6 +40,8 @@ kotlin {
             implementation(libs.koin.androidx.compose)
         }
         commonMain.dependencies {
+            implementation(project(":base:routes"))
+            implementation(project(":feature:dashboard"))
             implementation(project(":feature:movie:movie-home"))
             implementation(project(":feature:movie:movie-detail"))
             implementation(compose.runtime)

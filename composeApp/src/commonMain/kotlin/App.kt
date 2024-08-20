@@ -16,20 +16,19 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import com.aldikitta.base.routes.Routes.DASHBOARD
+import com.aldikitta.base.routes.Routes.INITIAL
+import com.aldikitta.base.routes.Routes.MOVIE_HOME_SCREEN
+import com.aldikitta.feature.dashboard.navigation.dashboardScreen
 import com.aldikitta.feature.detail.navigation.detailScreen
 import com.aldikitta.feature.detail.navigation.navigateDetailScreen
-import com.aldikitta.feature.home.navigation.HOME_SCREEN
 import com.aldikitta.feature.home.navigation.homeScreen
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
-
-import moviekmp.composeapp.generated.resources.Res
-import moviekmp.composeapp.generated.resources.compose_multiplatform
 import org.koin.compose.KoinContext
 import org.koin.compose.currentKoinScope
 
-const val initial = "initial"
 
 @Composable
 @Preview
@@ -40,20 +39,18 @@ fun App() {
             val viewModel = koinViewModel<MainViewModel>()
             NavHost(
                 navController = navController,
-                route = initial,
-                startDestination = HOME_SCREEN,
-                modifier = Modifier
-                    .fillMaxSize()
-                    .verticalScroll(rememberScrollState())
+                route = INITIAL,
+                startDestination = DASHBOARD,
             ) {
-                homeScreen(
-                    navigateToB = {
-                        navController.navigateDetailScreen()
-                    },
-                    dummyText = viewModel.getDummyText()
-                )
-
-                detailScreen(dummyText = viewModel.getDummyText())
+                dashboardScreen()
+//                homeScreen(
+//                    navigateToB = {
+//                        navController.navigateDetailScreen()
+//                    },
+//                    dummyText = viewModel.getDummyText()
+//                )
+//
+//                detailScreen(dummyText = viewModel.getDummyText())
             }
         }
     }

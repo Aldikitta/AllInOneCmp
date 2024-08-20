@@ -4,18 +4,18 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
+import com.aldikitta.base.routes.Routes.MOVIE_DETAIL_SCREEN
 import com.aldikitta.feature.detail.DetailScreen
 
-const val DETAIL_SCREEN = "detail_screen_routes"
 fun NavController.navigateDetailScreen(navOptions: NavOptions? = null) {
-    this.navigate(DETAIL_SCREEN, navOptions)
+    this.navigate(MOVIE_DETAIL_SCREEN, navOptions)
 }
 
 fun NavGraphBuilder.detailScreen(
     dummyText: String
 ) {
     composable(
-        route = DETAIL_SCREEN,
+        route = MOVIE_DETAIL_SCREEN,
         content = {
             DetailScreen(dummyText)
         },
