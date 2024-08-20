@@ -40,8 +40,8 @@ kotlin {
             implementation(libs.koin.androidx.compose)
         }
         commonMain.dependencies {
-            implementation(project(":feature:movie-home"))
-            implementation(project(":feature:movie-detail"))
+            implementation(project(":feature:movie:movie-home"))
+            implementation(project(":feature:movie:movie-detail"))
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material)

@@ -26,7 +26,7 @@ kotlin {
         iosSimulatorArm64()
     ).forEach {
         it.binaries.framework {
-            baseName = "detail"
+            baseName = "movie-detail"
             isStatic = true
         }
     }
@@ -51,7 +51,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.aldikitta.feature.detail"
+    namespace = "com.aldikitta.feature.movie.movie-detail"
     compileSdk = 34
     defaultConfig {
         minSdk = 24

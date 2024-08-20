@@ -29,8 +29,8 @@ dependencyResolutionManagement {
 }
 
 include(":composeApp")
-include(":feature:movie-home")
-include(":feature:movie-detail")
+include(":feature:movie:movie-home")
+include(":feature:movie:movie-detail")
 include(":core:data")
 include(":core:domain")
 include(":core:model")

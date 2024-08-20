@@ -53,7 +53,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.aldikitta.feature.home"
+    namespace = "com.aldikitta.feature.movie.movie-home"
     compileSdk = 34
     defaultConfig {
         minSdk = 24
