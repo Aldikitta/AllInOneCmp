@@ -29,11 +29,12 @@ dependencyResolutionManagement {
 }
 
 include(":composeApp")
-include(":feature:home")
-include(":feature:detail")
+include(":feature:movie:movie-home")
+include(":feature:movie:movie-detail")
 include(":core:data")
 include(":core:domain")
 include(":core:model")
 include(":core:dto")
 include(":core:mapper")
 include(":core:utils")
+include(":feature:dashboard")

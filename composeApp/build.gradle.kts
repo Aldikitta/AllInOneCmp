@@ -1,16 +1,21 @@
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.compose.compiler)
 }
 
 kotlin {
     androidTarget {
         compilations.all {
-            kotlinOptions {
-                jvmTarget = "11"
+            tasks.withType<KotlinJvmCompile>().configureEach {
+                compilerOptions {
+                    jvmTarget.set(JvmTarget.JVM_11)
+                    freeCompilerArgs.add("-opt-in=kotlin.RequiresOptIn")
+                }
             }
         }
     }
@@ -35,8 +40,8 @@ kotlin {
             implementation(libs.koin.androidx.compose)
         }
         commonMain.dependencies {
-            implementation(project(":feature:home"))
-            implementation(project(":feature:detail"))
+            implementation(project(":feature:movie:movie-home"))
+            implementation(project(":feature:movie:movie-detail"))
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material)

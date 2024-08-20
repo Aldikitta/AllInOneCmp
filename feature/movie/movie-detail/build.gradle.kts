@@ -6,7 +6,6 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.compose.compiler)
-    kotlin("plugin.serialization") version "2.0.0"
 }
 
 kotlin {
@@ -27,7 +26,7 @@ kotlin {
         iosSimulatorArm64()
     ).forEach {
         it.binaries.framework {
-            baseName = "model"
+            baseName = "movie-detail"
             isStatic = true
         }
     }
@@ -36,7 +35,14 @@ kotlin {
         commonMain.dependencies {
             //put your multiplatform dependencies here
 
+            implementation(compose.runtime)
+            implementation(compose.foundation)
+            implementation(compose.material)
             implementation(compose.ui)
+            implementation(compose.components.resources)
+            implementation(compose.components.uiToolingPreview)
+
+            implementation(libs.navigation.compose)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -45,7 +51,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.aldikitta.core.model"
+    namespace = "com.aldikitta.feature.movie.movie-detail"
     compileSdk = 34
     defaultConfig {
         minSdk = 24
