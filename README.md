@@ -16,4 +16,4 @@ Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-mu
 
 |                                          iOS                                            |                                         Android                                        |
 | :------------------------------------------------------------------------------------:  | :------------------------------------------------------------------------------------: |
-|  ![](https://github.com/user-attachments/assets/61ab11c7-166f-4596-9b02-d4573ffb73f8)   |  ![](https://github.com/user-attachments/assets/45b3dd74-33ac-47fa-b9b5-8f80c17ec997)  |
+|  ![](.fleet/iOS)   |  ![](.fleet/android)  |
