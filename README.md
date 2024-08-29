@@ -11,7 +11,7 @@ This is a Kotlin Multiplatform project targeting Android, iOS.
   you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
 
 # Compose Multiplatform App (Work In Progress)
-This the CMP App, i wanna cover all the require "things" in the world of iOS and Android using CMP, i will play with networking, push notif, hardware, camera, video and many more. the Movie and E-commerce feature is mostly just playing with Ui, fetching data and others, but in CMP Playgrund i will cover how to implement Camera, Video, Push notif, and more. I hope this repo help others who need to learn more about Compose Multiplatform
+This the CMP App, i wanna cover all the require "things" in the world of iOS and Android using CMP, i will play with networking, push notif, hardware, camera, video and many more. the Movie and E-commerce feature is mostly just playing with Ui, fetching data and others, but in CMP Playground i will cover how to implement Camera, Video, Push notif, and more. I hope this repo help others who need to learn more about Compose Multiplatform
 
 
 ### Structural design pattern
