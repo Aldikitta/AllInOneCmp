@@ -15,7 +15,7 @@ actual class KoinInitializer(
         startKoin {
             androidContext(context)
             androidLogger()
-            modules(appModule, viewModelModule, dataMovieModule, useCaseMovieModule, viewModelMovieHomeModule)
+            modules(dataMovieModule, useCaseMovieModule, viewModelMovieHomeModule)
         }
     }
 }
