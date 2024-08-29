@@ -35,7 +35,7 @@ kotlin {
         commonMain.dependencies {
             //put your multiplatform dependencies here
 
-            implementation(project(":base:routes"))
+            implementation(project(":base:navigation"))
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material3)
