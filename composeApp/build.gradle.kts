@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.compose.compiler)
+    kotlin("plugin.serialization") version "2.0.0"
 }
 
 kotlin {
@@ -40,7 +41,9 @@ kotlin {
             implementation(libs.koin.androidx.compose)
         }
         commonMain.dependencies {
-            implementation(project(":base:routes"))
+            implementation(project(":base:navigation"))
+            implementation(project(":core:data:movie:movie-data"))
+            implementation(project(":core:domain:movie:movie-domain"))
             implementation(project(":feature:dashboard"))
             implementation(project(":feature:movie:movie-home"))
             implementation(project(":feature:movie:movie-detail"))
@@ -50,6 +53,7 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
+            implementation(libs.kotlinx.serialization.json)
 
             implementation(libs.navigation.compose)
 

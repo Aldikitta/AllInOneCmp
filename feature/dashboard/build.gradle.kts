@@ -35,7 +35,7 @@ kotlin {
         commonMain.dependencies {
             //put your multiplatform dependencies here
 
-            implementation(project(":base:routes"))
+            implementation(project(":base:navigation"))
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material3)
@@ -54,9 +54,9 @@ kotlin {
 
 android {
     namespace = "com.aldikitta.feature.dashboard"
-    compileSdk = 34
+    compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
-        minSdk = 24
+        minSdk = libs.versions.android.minSdk.get().toInt()
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

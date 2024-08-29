@@ -26,18 +26,20 @@ kotlin {
         iosSimulatorArm64()
     ).forEach {
         it.binaries.framework {
-            baseName = "home"
+            baseName = "movie-home"
             isStatic = true
         }
     }
 
     sourceSets {
         androidMain.dependencies {
-            implementation(libs.compose.ui.tooling.preview)
-            implementation(libs.androidx.activity.compose)
+            implementation(libs.koin.android)
+            implementation(libs.koin.androidx.compose)
         }
         commonMain.dependencies {
-            implementation(project(":base:routes"))
+            implementation(project(":base:navigation"))
+            implementation(project(":core:domain:movie:movie-domain"))
+            implementation(project(":core:common"))
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material)
@@ -46,6 +48,10 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
 
             implementation(libs.navigation.compose)
+
+            // Koin
+            api(libs.koin.core)
+            implementation(libs.koin.compose)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -55,9 +61,9 @@ kotlin {
 
 android {
     namespace = "com.aldikitta.feature.movie.movie_home"
-    compileSdk = 34
+    compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
-        minSdk = 24
+        minSdk = libs.versions.android.minSdk.get().toInt()
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

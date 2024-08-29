@@ -35,7 +35,8 @@ kotlin {
         commonMain.dependencies {
             //put your multiplatform dependencies here
 
-            implementation(project(":base:routes"))
+            implementation(project(":base:navigation"))
+            implementation(project(":core:domain:movie:movie-domain"))
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material)
@@ -53,9 +54,9 @@ kotlin {
 
 android {
     namespace = "com.aldikitta.feature.movie.movie_detail"
-    compileSdk = 34
+    compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
-        minSdk = 24
+        minSdk = libs.versions.android.minSdk.get().toInt()
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

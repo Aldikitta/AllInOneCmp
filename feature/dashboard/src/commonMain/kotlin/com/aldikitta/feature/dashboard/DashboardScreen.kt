@@ -31,7 +31,11 @@ import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DashboardScreen() {
+fun DashboardScreen(
+    navigateToMovie: () -> Unit,
+    navigateToEcommerce: () -> Unit,
+    navigateToCmpPlayground: () -> Unit
+) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -41,19 +45,31 @@ fun DashboardScreen() {
             )
         }
     ) {
-        ItemMenu(it)
+        ItemMenu(
+            paddingValues = it,
+            navigateToMovie = navigateToMovie,
+            navigateToEcommerce = navigateToEcommerce,
+            navigateToCmpPlayground = navigateToCmpPlayground
+        )
     }
 }
 
 @Composable
-fun ItemMenu(paddingValues: PaddingValues) {
+fun ItemMenu(
+    paddingValues: PaddingValues,
+    navigateToMovie: () -> Unit,
+    navigateToEcommerce: () -> Unit,
+    navigateToCmpPlayground: () -> Unit
+) {
     Column(
         modifier = Modifier.padding(paddingValues).fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceEvenly
     ) {
         Box(
-            modifier = Modifier.size(120.dp).border(width = 2.dp, color = Color.Black, shape = ShapeDefaults.Medium).clickable {  },
+            modifier = Modifier.size(120.dp)
+                .border(width = 2.dp, color = Color.Black, shape = ShapeDefaults.Medium)
+                .clickable { navigateToMovie.invoke() },
             contentAlignment = Alignment.Center
         ) {
             Column(
@@ -68,7 +84,9 @@ fun ItemMenu(paddingValues: PaddingValues) {
         }
 
         Box(
-            modifier = Modifier.size(120.dp).border(width = 2.dp, color = Color.Black, shape = ShapeDefaults.Medium).clickable {  },
+            modifier = Modifier.size(120.dp)
+                .border(width = 2.dp, color = Color.Black, shape = ShapeDefaults.Medium)
+                .clickable { navigateToEcommerce.invoke() },
             contentAlignment = Alignment.Center
         ) {
             Column(
@@ -83,7 +101,9 @@ fun ItemMenu(paddingValues: PaddingValues) {
         }
 
         Box(
-            modifier = Modifier.size(120.dp).border(width = 2.dp, color = Color.Black, shape = ShapeDefaults.Medium).clickable {  },
+            modifier = Modifier.size(120.dp)
+                .border(width = 2.dp, color = Color.Black, shape = ShapeDefaults.Medium)
+                .clickable { navigateToCmpPlayground.invoke() },
             contentAlignment = Alignment.Center
         ) {
             Column(
