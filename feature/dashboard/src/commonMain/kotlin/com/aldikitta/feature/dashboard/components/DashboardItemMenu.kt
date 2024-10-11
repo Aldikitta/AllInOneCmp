@@ -21,7 +21,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun Grid(
+fun GridMenu(
     paddingValues: PaddingValues,
     itemsMenu: List<ItemMenu>
 ) {
@@ -29,17 +29,16 @@ fun Grid(
         columns = GridCells.Adaptive(minSize = 128.dp)
     ) {
         items(itemsMenu) {
-            ItemMenu(itemMenu = it, modifier = Modifier.padding(paddingValues).fillMaxSize())
+            ItemMenuComponent(itemMenu = it, modifier = Modifier.padding(paddingValues).fillMaxSize())
         }
     }
 }
 
 @Composable
-internal fun ItemMenu(
+internal fun ItemMenuComponent(
     itemMenu: ItemMenu,
     modifier: Modifier
 ) {
-
     Column(
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -48,7 +47,7 @@ internal fun ItemMenu(
         Box(
             modifier = Modifier.size(120.dp)
                 .border(width = 2.dp, color = Color.Black, shape = ShapeDefaults.Medium)
-                .clickable { itemMenu.navigteTo.invoke() },
+                .clickable { itemMenu.navigateTo.invoke() },
             contentAlignment = Alignment.Center
         ) {
             Column(

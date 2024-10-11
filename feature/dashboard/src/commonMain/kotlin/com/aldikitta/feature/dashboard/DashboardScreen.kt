@@ -7,7 +7,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
-import com.aldikitta.feature.dashboard.components.Grid
+import com.aldikitta.feature.dashboard.components.GridMenu
 import com.aldikitta.feature.dashboard.components.ItemMenu
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -28,33 +28,33 @@ fun DashboardScreen(
             )
         }
     ) {
-        Grid(
+        GridMenu(
             paddingValues = it,
             itemsMenu = listOf(
                 ItemMenu(
                     title = "Movie",
                     icon = Icons.Default.Movie,
-                    navigteTo = navigateToMovie
+                    navigateTo = navigateToMovie
                 ),
                 ItemMenu(
                     title = "E-Commerce",
                     icon = Icons.Default.Shop,
-                    navigteTo = navigateToEcommerce
+                    navigateTo = navigateToEcommerce
                 ),
                 ItemMenu(
                     title = "Dynamic Form",
                     icon = Icons.Default.DynamicForm,
-                    navigteTo = navigateToDynamicForm
+                    navigateTo = navigateToDynamicForm
                 ),
                 ItemMenu(
                     title = "DSL",
                     icon = Icons.Default.DesignServices,
-                    navigteTo = navigateToDsl
+                    navigateTo = navigateToDsl
                 ),
                 ItemMenu(
                     title = "CMP Playground",
                     icon = Icons.Default.Settings,
-                    navigteTo = navigateToCmpPlayground
+                    navigateTo = navigateToCmpPlayground
                 ),
             )
         )
