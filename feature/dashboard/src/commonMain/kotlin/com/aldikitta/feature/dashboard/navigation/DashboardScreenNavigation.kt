@@ -14,7 +14,9 @@ fun NavGraphBuilder.dashboardScreen(
         DashboardScreen(
             navigateToMovie = navigateToMovie,
             navigateToEcommerce = navigateToEcommerce,
-            navigateToCmpPlayground = navigateToCmpPlayground
+            navigateToCmpPlayground = navigateToCmpPlayground,
+            navigateToDynamicForm = {},
+            navigateToDsl = {}
         )
     }
 }
