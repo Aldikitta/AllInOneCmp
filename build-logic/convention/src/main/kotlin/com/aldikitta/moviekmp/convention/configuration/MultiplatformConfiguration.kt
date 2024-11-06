@@ -7,7 +7,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 internal fun Project.configureKotlinMultiplatform(
     extension: KotlinMultiplatformExtension
 ) = extension.apply {
-    val moduleName = path.split(":").drop(2).joinToString(".")
+    val moduleName = path.substringAfter(":").replace(":", ".").replaceFirstChar { it.uppercase() }
 
     androidTarget {
         compilations.all {
