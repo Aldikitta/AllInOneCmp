@@ -1,8 +1,8 @@
 product:
   type: ios/app
 
+apply:
+  - ../common.module-template.yaml
+
 dependencies:
   - ../shared
-
-settings:
-  compose: enabled

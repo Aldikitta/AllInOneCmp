@@ -1,0 +1,3 @@
+compose.resources {
+  publicResClass = true
+}

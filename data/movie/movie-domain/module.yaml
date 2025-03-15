@@ -1,0 +1,6 @@
+product:
+  type: lib
+  platforms: [android, iosSimulatorArm64, iosArm64, iosX64]
+
+dependencies:
+  - $libs.koin.core

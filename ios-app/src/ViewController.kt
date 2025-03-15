@@ -1,3 +1,11 @@
-import androidx.compose.ui.window.ComposeUIViewController
+package com.aldikitta.allinonecmp
 
-fun ViewController() = ComposeUIViewController { Screen() }
+import App
+import androidx.compose.ui.window.ComposeUIViewController
+import di.KoinInitializer
+
+fun ViewController() = ComposeUIViewController(
+    configure = {
+        KoinInitializer().init()
+    }
+){ App() }

@@ -1,0 +1,6 @@
+settings:
+  compose:
+    enabled: true
+  kotlin:
+#    languageVersion: 2.0
+    serialization: enabled

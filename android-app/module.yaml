@@ -1,8 +1,19 @@
 product: android/app
 
+apply:
+  - ../common.module-template.yaml
+
 dependencies:
   - ../shared
-  - androidx.activity:activity-compose:1.7.2
+  - ../base/resources
+  - $libs.androidx.activity.compose
 
 settings:
-  compose: enabled
+  android:
+    applicationId: "com.aldikitta.allinonecmp.android"
+    namespace: "com.aldikitta.allinonecmp.android"
+    versionCode: 1
+    versionName: 1.0.0
+    compileSdk: 34
+    targetSdk: 34
+    minSdk: 24

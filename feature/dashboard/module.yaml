@@ -1,0 +1,19 @@
+product:
+  type: lib
+  platforms: [android, iosSimulatorArm64, iosArm64, iosX64]
+
+apply:
+  - ../../common.module-template.yaml
+
+dependencies:
+  - ../../shared
+  - $compose.runtime
+  - $compose.foundation
+  - $compose.ui
+
+module:
+  layout: gradle-kmp
+
+settings:
+  android:
+    namespace: "com.aldikitta.dashboard"
