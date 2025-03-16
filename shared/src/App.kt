@@ -3,10 +3,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-//import com.aldikitta.base.navigation.DashboardNavGraph
-//import navigation.graph.dashboardGraph
-//import navigation.graph.movieNavGraph
-//import navigation.graph.navigateToMovieNavGraph
+import navigation.graph.dashboardGraph
 import org.koin.compose.KoinContext
 
 @Composable
@@ -20,7 +17,7 @@ fun App() {
             ) {
                 dashboardGraph(
                     navigateToMovie = {
-                        navController.navigateToMovieNavGraph()
+//                        navController.navigateToMovieNavGraph()
                     },
                     navigateToEcommerce = {
 
@@ -29,7 +26,7 @@ fun App() {
 
                     }
                 )
-                movieNavGraph(navController)
+//                movieNavGraph(navController)
             }
         }
     }

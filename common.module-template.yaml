@@ -1,3 +1,6 @@
+dependencies:
+  - $compose.material3
+
 settings:
   compose:
     enabled: true

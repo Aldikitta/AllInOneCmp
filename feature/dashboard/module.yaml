@@ -6,13 +6,12 @@ apply:
   - ../../common.module-template.yaml
 
 dependencies:
-  - ../../shared
+  - ../../base/navigation
   - $compose.runtime
   - $compose.foundation
   - $compose.ui
-
-module:
-  layout: gradle-kmp
+  - $compose.materialIconsExtended
+  - $libs.navigation.compose
 
 settings:
   android:

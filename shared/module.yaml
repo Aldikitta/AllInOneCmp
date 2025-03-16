@@ -9,12 +9,15 @@ dependencies:
   - $compose.foundation: exported
   - $compose.material3: exported
   - $libs.koin.core: exported
+  - $libs.koin.compose: exported
+  - $libs.navigation.compose: exported
   - ../data/movie/movie-domain
   - ../data/movie/movie-data
+  - ../base/navigation
+  - ../feature/dashboard
 
 dependencies@android:
   - $libs.koin.android
-
 
 settings:
   android:
