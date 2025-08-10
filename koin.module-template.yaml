@@ -1,0 +1,7 @@
+dependencies:
+  - io.insert-koin:koin-core:3.6.0-alpha3: exported
+  - io.insert-koin:koin-compose:1.2.0-alpha3: exported
+
+dependencies@android:
+  - io.insert-koin:koin-androidx-compose:3.6.0-alpha3: exported
+  - io.insert-koin:koin-android:3.6.0-alpha3: exported

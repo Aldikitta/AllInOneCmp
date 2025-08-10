@@ -1,0 +1,11 @@
+product:
+  type: jvm/app
+
+apply:
+  - ../koin.module-template.yaml
+  - ../jetbrains.module-template.yaml
+
+dependencies:
+  - ../shared
+  - $compose.desktop.currentOs
+

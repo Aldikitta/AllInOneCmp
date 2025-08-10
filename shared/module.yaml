@@ -1,0 +1,16 @@
+product:
+  type: lib
+  platforms: [jvm, android, iosArm64, iosSimulatorArm64, iosX64]
+
+apply:
+  - ../koin.module-template.yaml
+  - ../jetbrains.module-template.yaml
+
+dependencies:
+  - ../base/navigation
+  - ../presentation/dashboard
+  - ../data/movie-data
+
+dependencies@android:
+  # Compose integration with Android activities
+  - androidx.activity:activity-compose:1.8.2: exported

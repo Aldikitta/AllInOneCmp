@@ -1,0 +1,10 @@
+product: android/app
+
+apply:
+  - ../jetbrains.module-template.yaml
+
+dependencies:
+  - ../shared
+
+settings:
+  junit: junit-4

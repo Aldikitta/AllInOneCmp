@@ -1,0 +1,10 @@
+dependencies:
+  - org.jetbrains.androidx.navigation:navigation-compose:2.9.0-beta03: exported
+  - $compose.foundation: exported
+  - $compose.material3: exported
+  - $compose.materialIconsExtended: exported
+
+settings:
+  compose:
+    version: 1.8.2
+    enabled: true
