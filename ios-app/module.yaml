@@ -2,7 +2,7 @@ product:
   type: ios/app
 
 apply:
-  - ../common.module-template.yaml
+  - ../jetbrains.module-template.yaml
 
 dependencies:
   - ../shared

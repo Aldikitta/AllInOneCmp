@@ -1,7 +1,7 @@
-package com.aldikitta.allinonecmp.android
+package hello.world
 
-import android.app.Application
 import di.KoinInitializer
+import android.app.Application
 
 class MyApp: Application() {
 
