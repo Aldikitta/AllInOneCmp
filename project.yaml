@@ -1,0 +1,9 @@
+modules:
+  - android-app
+  - ios-app
+  - jvm-app
+  - shared
+  - data/movie-data
+  - domain/movie-domain
+  - presentation/dashboard
+  - base/navigation
