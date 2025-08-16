@@ -1,9 +1,9 @@
 modules:
-  - android-app
-  - ios-app
-  - jvm-app
-  - shared
-  - data/movie-data
-  - domain/movie-domain
-  - presentation/dashboard
+  - apps/android-app
+  - apps/ios-app
+  - apps/jvm-app
+  - apps/shared
+  - architecture-layer/data-layer/movie-data
+  - architecture-layer/domain-layer/movie-domain
+  - architecture-layer/presentation-layer/dashboard
   - base/navigation

@@ -3,7 +3,7 @@ product:
   platforms: [jvm, android, iosArm64, iosSimulatorArm64, iosX64]
 
 apply:
-  - ../../koin.module-template.yaml
+  - ../../../jetbrains.module-template.yaml
 
 dependencies:
-  - ../../domain/movie-domain
+  - ../../../base/navigation

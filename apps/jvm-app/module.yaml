@@ -2,8 +2,8 @@ product:
   type: jvm/app
 
 apply:
-  - ../koin.module-template.yaml
-  - ../jetbrains.module-template.yaml
+  - ../../koin.module-template.yaml
+  - ../../jetbrains.module-template.yaml
 
 dependencies:
   - ../shared

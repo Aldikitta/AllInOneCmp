@@ -3,13 +3,13 @@ product:
   platforms: [jvm, android, iosArm64, iosSimulatorArm64, iosX64]
 
 apply:
-  - ../koin.module-template.yaml
-  - ../jetbrains.module-template.yaml
+  - ../../koin.module-template.yaml
+  - ../../jetbrains.module-template.yaml
 
 dependencies:
-  - ../base/navigation
-  - ../presentation/dashboard
-  - ../data/movie-data
+  - ../../base/navigation
+  - ../../architecture-layer/presentation-layer/dashboard
+  - ../../architecture-layer/data-layer/movie-data
 
 dependencies@android:
   # Compose integration with Android activities
