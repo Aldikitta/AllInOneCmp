@@ -1,0 +1,8 @@
+dependencies:
+   - org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0: exported
+
+settings:
+  android:
+    minSdk: 24
+    targetSdk: 35
+    compileSdk: 35

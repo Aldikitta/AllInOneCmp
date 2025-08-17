@@ -1,9 +1,13 @@
 package di
 
-import org.koin.dsl.module
+import org.koin.core.annotation.Factory
+import org.koin.core.annotation.Module
 import repository.MovieRepository
 import repository.MovieRepositoryImpl
 
-val dataMovieModule = module {
-    factory<MovieRepository> { MovieRepositoryImpl() }
+@Module
+class DataMovieModule {
+    @Factory(binds = [MovieRepository::class])
+    fun movieRepository() = MovieRepositoryImpl()
+
 }

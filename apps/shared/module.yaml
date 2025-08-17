@@ -8,9 +8,10 @@ apply:
 
 dependencies:
   - ../../base/navigation
+  - ../../base/design-system
   - ../../architecture-layer/presentation-layer/dashboard
   - ../../architecture-layer/data-layer/movie-data
 
 dependencies@android:
   # Compose integration with Android activities
-  - androidx.activity:activity-compose:1.8.2: exported
+  - androidx.activity:activity-compose:1.10.1: exported

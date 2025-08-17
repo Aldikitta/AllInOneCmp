@@ -1,0 +1,13 @@
+product:
+  type: lib
+  platforms: [jvm, android, iosArm64, iosSimulatorArm64, iosX64]
+
+apply:
+  - ../../jetbrains.module-template.yaml
+  - ../../koin.module-template.yaml
+  - ../../android.module-template.yaml
+
+# when navigation 3 is supported in compose multi platform, use this for single-two pane scene
+#dependencies@android:
+#  - androidx.navigation3:navigation3-runtime:1.0.0-alpha07: exported
+#  - androidx.navigation3:navigation3-ui:1.0.0-alpha07: exported

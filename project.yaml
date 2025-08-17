@@ -7,3 +7,5 @@ modules:
   - architecture-layer/domain-layer/movie-domain
   - architecture-layer/presentation-layer/dashboard
   - base/navigation
+  - architecture-layer/presentation-layer/movie
+  - base/design-system

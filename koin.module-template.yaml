@@ -1,7 +1,16 @@
 dependencies:
-  - io.insert-koin:koin-core:3.6.0-alpha3: exported
-  - io.insert-koin:koin-compose:1.2.0-alpha3: exported
+  - io.insert-koin:koin-core:4.1.0
+  - io.insert-koin:koin-compose:4.1.0
+  - io.insert-koin:koin-compose-viewmodel-navigation:4.1.0
+  - io.insert-koin:koin-annotations:2.1.0: exported
 
-dependencies@android:
-  - io.insert-koin:koin-androidx-compose:3.6.0-alpha3: exported
-  - io.insert-koin:koin-android:3.6.0-alpha3: exported
+settings:
+  kotlin:
+    ksp:
+      processors:
+        - io.insert-koin:koin-ksp-compiler:2.1.0
+      processorOptions:
+        KOIN_USE_COMPOSE_VIEWMODEL: "true"
+        KOIN_CONFIG_CHECK: "true"
+        KOIN_DEFAULT_MODULE: "true"
+        koin.generate: all

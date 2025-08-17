@@ -4,8 +4,6 @@ product:
 
 apply:
   - ../../../jetbrains.module-template.yaml
-  - ../../../koin.module-template.yaml
 
 dependencies:
   - ../../../base/navigation
-  - ../../../base/design-system
