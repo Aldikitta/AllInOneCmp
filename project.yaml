@@ -9,3 +9,4 @@ modules:
   - base/navigation
   - architecture-layer/presentation-layer/movie
   - base/design-system
+  - base/resources

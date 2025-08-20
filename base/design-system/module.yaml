@@ -7,6 +7,9 @@ apply:
   - ../../koin.module-template.yaml
   - ../../android.module-template.yaml
 
+dependencies:
+  - ../resources
+
 # when navigation 3 is supported in compose multi platform, use this for single-two pane scene
 #dependencies@android:
 #  - androidx.navigation3:navigation3-runtime:1.0.0-alpha07: exported

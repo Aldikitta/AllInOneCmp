@@ -9,13 +9,19 @@ import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.getString
+import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.koinInject
+import resources.generated.resources.Res
+import resources.generated.resources.internet_connected
+import resources.generated.resources.internet_not_connected
 import screen.connectivity.ConnectionStatus
 import screen.connectivity.ConnectivityObserver
 
@@ -34,15 +40,21 @@ fun CmpIsFunScreen(
     LaunchedEffect(connectionStatus) {
         if (connectionStatus == ConnectionStatus.Available) {
             scope.launch {
-                snackBarHostState.showSnackbar(message = "Connected", duration = SnackbarDuration.Short)
+                snackBarHostState.showSnackbar(message = getString(Res.string.internet_connected), duration = SnackbarDuration.Short)
             }
         } else {
             scope.launch {
-                snackBarHostState.showSnackbar(message = "Disconnected", duration = SnackbarDuration.Short)
+                snackBarHostState.showSnackbar(message = getString(Res.string.internet_not_connected), duration = SnackbarDuration.Short)
             }
         }
     }
-
+//    CompositionLocalProvider(
+//        LocalAppLocale provides customAppLocale,
+//    ) {
+//        key(customAppLocale) {
+//            content()
+//        }
+//    }
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
