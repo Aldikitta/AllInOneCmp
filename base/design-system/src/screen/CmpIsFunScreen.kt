@@ -13,8 +13,11 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.key
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.getString
 import org.jetbrains.compose.resources.stringResource
@@ -37,35 +40,36 @@ fun CmpIsFunScreen(
     val snackBarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
 
+    var customAppLocale by mutableStateOf<String?>(null)
+
     LaunchedEffect(connectionStatus) {
         if (connectionStatus == ConnectionStatus.Available) {
             scope.launch {
-                snackBarHostState.showSnackbar(message = getString(Res.string.internet_connected), duration = SnackbarDuration.Short)
+                snackBarHostState.showSnackbar(message = getString(Res.string.internet_connected), duration = SnackbarDuration.Indefinite)
             }
         } else {
             scope.launch {
-                snackBarHostState.showSnackbar(message = getString(Res.string.internet_not_connected), duration = SnackbarDuration.Short)
+                snackBarHostState.showSnackbar(message = getString(Res.string.internet_not_connected), duration = SnackbarDuration.Indefinite)
             }
         }
     }
-//    CompositionLocalProvider(
-//        LocalAppLocale provides customAppLocale,
-//    ) {
-//        key(customAppLocale) {
-//            content()
-//        }
-//    }
-    Scaffold(
-        topBar = {
-            CenterAlignedTopAppBar(
-                title = {
-                    Text(text = titleTopBar.orEmpty())
-                }
+    CompositionLocalProvider(
+        LocalAppLocale provides customAppLocale,
+    ) {
+        key(customAppLocale) {
+            Scaffold(
+                topBar = {
+                    CenterAlignedTopAppBar(
+                        title = {
+                            Text(text = titleTopBar.orEmpty())
+                        }
+                    )
+                },
+                snackbarHost = {
+                    SnackbarHost(snackBarHostState)
+                },
+                content = content
             )
-        },
-        snackbarHost = {
-            SnackbarHost(snackBarHostState)
-        },
-        content = content
-    )
+        }
+    }
 }

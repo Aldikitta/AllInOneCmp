@@ -2,7 +2,10 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-    android:name="hello.world.MyApp">
+    android:name="hello.world.MyApp"
+    android:label="hello.world.MyApp"
+    android:supportsRtl="true"
+    android:theme="@android:style/Theme.Material.Light.NoActionBar">
         <activity android:name="hello.world.MainActivity"
                   android:exported="true">
             <intent-filter>
