@@ -1,4 +1,4 @@
-package hello.world
+package com.cmpisfun.aldikitta
 
 import App
 import android.os.Bundle

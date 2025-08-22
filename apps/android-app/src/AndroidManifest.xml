@@ -2,11 +2,11 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-    android:name="hello.world.MyApp"
-    android:label="hello.world.MyApp"
+    android:name=".MyApp"
+    android:label="@string/app_name"
     android:supportsRtl="true"
     android:theme="@android:style/Theme.Material.Light.NoActionBar">
-        <activity android:name="hello.world.MainActivity"
+        <activity android:name="com.cmpisfun.aldikitta.MainActivity"
                   android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
